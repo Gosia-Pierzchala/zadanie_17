@@ -1,6 +1,10 @@
 package aplikacja;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
 import java.util.Random;
 
+@Component
 public class StacjaPogodowa {
     private int temperatura;
     private String naslonecznienie;
@@ -8,6 +12,7 @@ public class StacjaPogodowa {
     private Integer temp = null;
     private String naslon = null;
 
+    @Autowired
     public int getTemperatura() {
         if(temp == null){
         Random random = new Random();
