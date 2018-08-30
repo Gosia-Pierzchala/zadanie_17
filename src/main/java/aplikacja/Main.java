@@ -1,13 +1,15 @@
 package aplikacja;
 
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-
 public class Main {
     public static void main(String[] args) {
 
-        ApplicationContext context = new AnnotationConfigApplicationContext(ApplicationConfig.class);
-        SmartHome home = context.getBean(SmartHome.class);
+        StacjaPogodowa stacjaPogodowa = new StacjaPogodowa();
+        stacjaPogodowa.getTemperatura();
+        stacjaPogodowa.getNaslonecznienie();
+        SterownikGlosnika sterownikGlosnika = new SterownikGlosnika(stacjaPogodowa);
+        SterownikPieca sterownikPieca = new SterownikPieca(stacjaPogodowa);
+        SterownikRolet sterownikRolet = new SterownikRolet(stacjaPogodowa);
+        SmartHome home = new SmartHome(sterownikGlosnika, sterownikPieca, sterownikRolet);
         home.uruchomSterowniki();
 
     }

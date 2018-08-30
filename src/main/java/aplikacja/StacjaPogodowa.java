@@ -1,20 +1,9 @@
 package aplikacja;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
-
 import java.util.Random;
 
-@Component
 public class StacjaPogodowa {
     private int temperatura;
     private String naslonecznienie;
-
-    @Autowired
-    public StacjaPogodowa(int temperatura, String naslonecznienie) {
-        this.temperatura = temperatura;
-        this.naslonecznienie = naslonecznienie;
-    }
 
     private Integer temp = null;
     private String naslon = null;

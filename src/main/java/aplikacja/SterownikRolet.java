@@ -1,13 +1,8 @@
 package aplikacja;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
-
-@Component
 public class SterownikRolet {
     private StacjaPogodowa stacjaPogodowa;
 
-    @Autowired
     public SterownikRolet(StacjaPogodowa stacjaPogodowa) {
         this.stacjaPogodowa = stacjaPogodowa;
     }
